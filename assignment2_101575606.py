@@ -78,6 +78,9 @@ class NetworkTool:
 # - scan_port(self, port):
 #     Q4: What would happen without try-except here?
 #     TODO: Your 2-4 sentence answer here... (Part 2, Q4)
+# Without try-except, any socket-related error could cause the program to crash.
+# Issues like timeouts, unreachable hosts, or connection failures would stop the entire scan.
+# Using try-except allows the program to handle errors gracefully and continue scanning other ports. This makes the scanner more robust and reliable.
 #
 #     - try-except with socket operations
 #     - Create socket, set timeout, connect_ex
@@ -92,6 +95,9 @@ class NetworkTool:
 #
 #     Q2: Why do we use threading instead of scanning one port at a time?
 #     TODO: Your 2-4 sentence answer here... (Part 2, Q2)
+# Threading allows multiple ports to be scanned simultaneously rather than sequentially.
+# This significantly reduces the total scanning time, especially when checking large ranges of ports.
+# Without threading, each port would have to wait for the previous one to finish, making the process slow. Overall, threading improves efficiency and performance.
 #
 # - scan_range(self, start_port, end_port):
 #     - Create threads list
@@ -258,5 +264,6 @@ if __name__ == "__main__":
 
 # Q5: New Feature Proposal
 # TODO: Your 2-3 sentence description here... (Part 2, Q5)
-# Useful feature would be exporting results to a CSV file
-# This would allow users to analyze scan data easily in spreadsheet tools
+# Useful feature would be exporting results to a CSV file.
+# This would allow users to easily open and analyze the data in spreadsheet software like Excel.
+# It would also make it easier to share or store scan results for later use.
